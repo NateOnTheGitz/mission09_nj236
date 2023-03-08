@@ -13,5 +13,14 @@
             </span>
         </h4>
     </div>
-    <div class="card-text p-1">Author: @Model.Author <br /> Publisher: @Model.Publisher <br /> ISBN: @Model.Isbn <br /> @Model.Classification/@Model.Category <br /> @Model.PageCount pages </div>
+    <div class="card-text p-1">
+        <ul class="list-group list-group-flush col-4">
+            <li class="list-group-item"><small class="text-muted">Author:</small> @Model.Author</li>
+            <li class="list-group-item"><small class="text-muted">Publisher:</small> @Model.Publisher</li>
+            <li class="list-group-item"><small class="text-muted">ISBN:</small> @Model.Isbn</li>
+            <li class="list-group-item">@Model.Classification/@Model.Category</li>
+            <li class="list-group-item">@Model.PageCount <small class="text-muted">pages</small></li>
+        </ul>
+        @*Author: @Model.Author <br /> Publisher: @Model.Publisher <br /> ISBN: @Model.Isbn <br /> @Model.Classification/@Model.Category <br /> @Model.PageCount pages*@ 
+    </div>
 </div>

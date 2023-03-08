@@ -54,10 +54,11 @@ namespace mission09_nj236
 
             app.UseEndpoints(endpoints =>
             {
+
                 endpoints.MapControllerRoute(
-                    "categoryPage",
-                    "{bookCategory}/Page{pageNum}",
-                    new {Controler = "Home", action = "Index"}
+                    name: "categoryPage",
+                    pattern: "{bookCategory}/{pageNum}",
+                    defaults: new { Controller = "Home", action = "Index"}
                     );
 
                 endpoints.MapControllerRoute(
@@ -71,6 +72,7 @@ namespace mission09_nj236
                     "{bookCategory}",
                     new { Controller = "Home", action = "Index", pageNum = 1}
                     );
+
 
                 endpoints.MapDefaultControllerRoute();
             });

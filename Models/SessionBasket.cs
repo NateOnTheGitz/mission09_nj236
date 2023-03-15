@@ -18,6 +18,8 @@ namespace mission09_nj236.Models
 
             SessionBasket basket = session?.GetJson<SessionBasket>("Basket") ?? new SessionBasket();
 
+            basket.Session = session;
+
             return basket;
         }
 

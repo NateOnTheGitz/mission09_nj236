@@ -24,17 +24,17 @@ namespace mission09_nj236.Pages
         public void OnGet(string returnUrl)
         {
             ReturnUrl = returnUrl ?? "/";
-            basket = HttpContext.Session.GetJson<Basket>("basket") ?? new Basket();
+            //basket = HttpContext.Session.GetJson<Basket>("basket") ?? new Basket();
         }
 
         public IActionResult OnPost(int bookID, string returnUrl)
         {
             Book b = repo.Books.FirstOrDefault(x => x.BookId == bookID);
 
-            basket = HttpContext.Session.GetJson<Basket>("basket") ?? new Basket();
+            //basket = HttpContext.Session.GetJson<Basket>("basket") ?? new Basket();
             basket.AddItem(b, 1);
 
-            HttpContext.Session.SetJson("basket", basket);
+            //HttpContext.Session.SetJson("basket", basket);
 
             return RedirectToPage(new { ReturnUrl = returnUrl });
         }
